@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>MFA</title>
+    <script src='./inject_module.js'></script>
+    <script>
+      const postForm = () => {
+        return fetch('/mfa', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            url: document.getElementById('url').value,
+            secret: document.getElementById('secret').value
+          })
+        })
+        .then(res => res.json())
+        .then(json => {
+          document.getElementById('token').innerText = json.token;
+          return json;
+        });
+    }
+
+    const getToken = (url) => {
+      return fetch('/mfa', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          url
+        })
+      })
+      .then(res => res.json());
+    }
+    </script>
+  </head>
+  <body>
+    Authorized <a href="/logout">Sign Out</a>
+    <div>
+      <form>
+        url: <input id='url'><br>
+        secret: <input id='secret'><br>
+        <input type='button' value='submit' onclick='postForm();'>
+      </form>
+    </div>
+    <div id='token'></div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+const SERVER = 'https://rampage.arrowlofts.net';

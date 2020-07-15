@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Secure MFA Proxy Plugin</title>
+    <script src='jsrsasign-latest-all-min.js'></script>
+    <script src='server.js'></script>
+    <script src='extension.js'></script>
+    <script src='jwt.js'></script>
+    <script src='mfa-api.js'></script>
+    <script src='storage.js'></script>
+    <script src='popup.js'></script>
+  </head>
+  <body>
+    <h1>Secure MFA Proxy Plugin</h1>
+    <div id='initDiv' style='display: block;'>
+      <table>
+        <tr><td>username:</td><td><input id='initUsername'></td></tr>
+      </table>
+      <table>
+        <tr><td><input  id='initButton' type='button' value='Create'></td></tr>
+        <tr><td><input  id='cancelButton' type='button' value='Cancel' style='display: none;'></td></tr>
+      </table>
+    </div>
+    <div id='dataDiv' style='display: none;'>
+      <table>
+        <tr><td>username:</td><td><input disabled=true id='username'></td></tr>
+        <tr><td>nonce:</td><td><input disabled=true id='nonce'></td></tr>
+        <tr><td>publicKey:</td><td><input disabled=true id='publicKey'></td></tr>
+      </table>
+      <input  id='testButton' type='button' value='Test'> <input  id='resetButton' type='button' value='Reset'>
+    </div>
+  </body>
+</html>

@@ -35,7 +35,7 @@
   "author": "Justin Eichel",
   "module": "dist/multi-factor-authenticator.esm.js",
   "devDependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-static": "^1.2.6",
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
